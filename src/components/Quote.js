@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { fetchQuote } from "./FetchQuote";
-import generateColor from "./Color";
+import {changeColor} from "./Color";
 import icon from "./quoteIcon";
-
-
-let body =  document.querySelector("body");
 
 
 class Quote extends Component {
@@ -18,7 +15,7 @@ class Quote extends Component {
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
-    async fetchNewQuote() {
+    async getQuote() {
         const quote = await fetchQuote();
 
         this.setState({
@@ -26,17 +23,10 @@ class Quote extends Component {
             text: quote.text,
         });
 
-        this.changeColor();
+        changeColor();
     }
 
-    changeColor() {
-        const quote = document.querySelector(".quote");
-        const btn = document.querySelector(".btn");
-        const color = generateColor();
-        body.style.backgroundColor = color;
-        quote.style.color = color;
-        btn.style.backgroundColor = color
-    }
+    
 
     renderQuote() {
         if(this.state.text.length <= 90) {
@@ -56,11 +46,11 @@ class Quote extends Component {
     }
 
     async componentDidMount() {
-        this.fetchNewQuote();
+        this.getQuote();
     }
 
     handleOnClick() {
-        this.fetchNewQuote();
+        this.getQuote();
     }
 
     render() {

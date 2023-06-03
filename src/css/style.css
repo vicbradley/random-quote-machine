@@ -14,7 +14,7 @@ body {
 
 .container {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,13 +70,34 @@ body {
 @media (max-width: 768px) {
     .card {
       width: 80vw;
-      height: 35vh;
+      height: 40vh;
+    }
+
+    .bi-quote {
+        width: 20px;
+        height: 20px;
     }
 
     .quote {
-        height: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        height: 200px;
+        /* border: 2px solid red; */
     }
+
+
+    .large {
+        font-size: 1.3rem;
+    }
+
+    .medium {
+        font-size: 1rem;
+    }
+
+    .small {
+        font-size: .8rem;
+    }
+
+    .author {
+        font-size: .8rem;
+    }
+
 }

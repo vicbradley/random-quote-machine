@@ -5,4 +5,14 @@ function generateColor() {
     return color;
 }
 
-export default generateColor;
+function changeColor() {
+  let body =  document.querySelector("body");
+  const quote = document.querySelector(".quote");
+  const btn = document.querySelector(".btn");
+  const color = generateColor();
+  body.style.backgroundColor = color;
+  quote.style.color = color;
+  btn.style.backgroundColor = color
+}
+
+export  {generateColor,changeColor};
